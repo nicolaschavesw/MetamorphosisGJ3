@@ -157,7 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5652003228772729465}
   m_Layer: 0
-  m_Name: FullCavePrefab
+  m_Name: Level 1 Cave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
