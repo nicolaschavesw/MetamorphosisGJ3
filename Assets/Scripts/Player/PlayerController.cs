@@ -7,25 +7,33 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float pitchSpeed, pitch;
+    [SerializeField] private Vector3 moveDirection;
     public Transform playerCamera;
     public Animator animator;
     public float speed;
+    public bool canMove;
 
     public Player player;
     void Start()
     {
+        canMove = true;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void FixedUpdate() {
+    void Update() {
         speed = player.speed;
+        if(!player.isAttacking)
+        {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-
         Quaternion cameraRotation = Quaternion.Euler(0f, playerCamera.eulerAngles.y, 0f);
-        Vector3 moveDirection = cameraRotation * new Vector3(horizontalInput,0,verticalInput);
-        
+        moveDirection = cameraRotation * new Vector3(horizontalInput,0,verticalInput);
         transform.position += moveDirection * speed * Time.deltaTime;
+        }
+        else
+        {
+            moveDirection = Vector3.zero;
+        }
 
         float mouseX = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
         transform.Rotate(Vector3.up * mouseX);
