@@ -1,11 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class DeadEnemy : MonoBehaviour
 {
+    public float food;
     // Start is called before the first frame update
     void Start()
+    {
+        
+    }
+    public void GiveFood()
     {
         
     }

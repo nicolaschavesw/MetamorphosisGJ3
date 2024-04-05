@@ -11,28 +11,27 @@ public class PlayerController : MonoBehaviour
     public Transform playerCamera;
     public Animator animator;
     public float speed;
-    public bool canMove;
-
+    
     public Player player;
     void Start()
     {
-        canMove = true;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update() {
         speed = player.speed;
-        if(!player.isAttacking)
+        if(player.isAttacking || player.isEating)
         {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-        Quaternion cameraRotation = Quaternion.Euler(0f, playerCamera.eulerAngles.y, 0f);
-        moveDirection = cameraRotation * new Vector3(horizontalInput,0,verticalInput);
-        transform.position += moveDirection * speed * Time.deltaTime;
+            moveDirection = Vector3.zero;
+            animator.SetBool("IsWalking",false);
         }
         else
         {
-            moveDirection = Vector3.zero;
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
+            Quaternion cameraRotation = Quaternion.Euler(0f, playerCamera.eulerAngles.y, 0f);
+            moveDirection = cameraRotation * new Vector3(horizontalInput,0,verticalInput);
+            transform.position += moveDirection * speed * Time.deltaTime;
         }
 
         float mouseX = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;

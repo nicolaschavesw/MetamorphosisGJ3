@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] public int level = 1;
-    [SerializeField] public float enemyHP = 100;
-    [SerializeField] public float speed = 5;
-    [SerializeField] public float attack = 2;
-    [SerializeField] public float defense = 2;
+    public int level = 1;
+    public float enemyHP = 100;
+    public float speed = 5;
+    public float attack = 2;
+    public float defense = 2;
+    public GameObject triggerCorpse;
     void Start()
     {
         
@@ -24,11 +25,18 @@ public class Enemy : MonoBehaviour
         Debug.Log("Vida del enemigo: " + enemyHP);
     }
 
+    public void IsDead()
+    {
+        triggerCorpse.SetActive(true);
+        gameObject.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(enemyHP <=0)
         {
+            IsDead();
             Debug.Log("isDead");
         }
     }
