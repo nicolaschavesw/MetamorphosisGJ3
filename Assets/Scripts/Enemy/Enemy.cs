@@ -10,9 +10,10 @@ public class Enemy : MonoBehaviour
     public float attack = 2;
     public float defense = 2;
     public GameObject triggerCorpse;
+    public bool isDead = false;
     void Start()
     {
-        
+        isDead = false;
     }
     public IEnumerator TakeDamage(float damage)
     {
@@ -29,6 +30,7 @@ public class Enemy : MonoBehaviour
     {
         triggerCorpse.SetActive(true);
         gameObject.SetActive(false);
+        isDead = true;
     }
 
     // Update is called once per frame

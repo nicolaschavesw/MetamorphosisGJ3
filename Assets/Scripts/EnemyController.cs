@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public Transform player; 
+    public Enemy enemy;
     private float minDistance = 5f;
     private NavMeshAgent agent; 
     private Animator animator;
@@ -26,7 +27,18 @@ public class EnemyController : MonoBehaviour
 
         if(distanceToPlayer < minDistance)
         {
-          agent.SetDestination(player.position);  
+            animator.SetBool("isReacting", true);
+          StartCoroutine(ReactForSeconds(2f));
+
+          if(!enemy.isDead)
+          {
+            agent.SetDestination(player.position);
+          }  
+          else
+          {
+            player.position = player.position;
+            animator.SetBool("isDead", true);
+          }
         }
 
         ChangeMovement();
@@ -61,12 +73,16 @@ public class EnemyController : MonoBehaviour
         if (angle < detectionAngle / 2 && distanceToPlayer < detectionRange)
         {
             isInRange = true;
-            animator.SetBool("isReacting", true);
         }
         else
         {
             isInRange = false;
         }
+    }
+    public IEnumerator ReactForSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        animator.SetBool("isReacting", false);
     }
     void OnDrawGizmosSelected()
     {

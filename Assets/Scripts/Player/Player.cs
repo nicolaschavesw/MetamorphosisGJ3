@@ -170,6 +170,7 @@ public class Player : MonoBehaviour
             float foodToAdd = deadEnemy.food;
             UpdateHP(foodToAdd);
             oneAttack = false;
+            Debug.Log("Colisionó");
         }
 
     }
