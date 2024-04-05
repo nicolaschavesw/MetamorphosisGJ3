@@ -86,7 +86,9 @@ public class Player : MonoBehaviour
     }
     public void UpdateHP(float foodToAdd)
     {
+        Debug.Log("Vida actual: "+ HP);
         HP += foodToAdd;
+        Debug.Log("Spider ha comido: " + foodToAdd + " puntos de comida\n La vida de Spider es: "+ HP);
     }
     // Improve the max health adding the multiplier 10 times, set the actual HP
     public void LevelUpHP(float Multiplier)
