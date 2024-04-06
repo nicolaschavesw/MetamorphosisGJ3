@@ -19,12 +19,14 @@ public class Player : MonoBehaviour
     public bool isAttacking = false;
     public bool isEating = false;
     public bool oneAttack = true;
+    public bool isDead = false;
     //public Slider slider;
     public SkinnedMeshRenderer skinnedMeshRenderer;
     public List<Material> materialList;
     private Material actualMaterial;
     private int selectedMaterial = 0;
     public float timer;
+    public Image HPBar;
 
 
     void Start()
@@ -32,9 +34,10 @@ public class Player : MonoBehaviour
         actualMaterial = materialList[selectedMaterial];
         skinnedMeshRenderer.material = actualMaterial;
         HP = MaxHP;
-        oneAttack = true;
+        isDead = false;
         isAttacking = false;
         isEating = false;
+        oneAttack = true;
         //slider.value = HP;
         //slider.minValue = 0;
         //slider.maxValue = MaxHP;
@@ -48,24 +51,35 @@ public class Player : MonoBehaviour
             timer = 0.0f;
             Debug.Log("Vida: " + HP);
         }
-        //Player Attack when LeftClick is down
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+
+        HPBar.fillAmount = HP / MaxHP;
+
+        if(!isDead)
         {
-            isAttacking = true;
-            animator.SetBool("Attack",true);
-            StartCoroutine(AttackEnemy());
-        }
-        //Player Eat when RightClick is down
-        if(Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            isEating = true;
-            animator.SetBool("IsEating",true);
-            StartCoroutine(Eat());
+            //Player Attack when LeftClick is down
+            if(Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                isAttacking = true;
+                animator.SetBool("Attack",true);
+                StartCoroutine(AttackEnemy());
+            }
+            //Player Eat when RightClick is down
+            if(Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                isEating = true;
+                animator.SetBool("IsEating",true);
+                StartCoroutine(Eat());
+            }
         }
         if(HP > MaxHP)
         {
             LevelUp();
             Debug.Log("La vida supero la vida maxima \n Spider subio al nivel: " + level);
+        }
+        if(HP <= 0)
+        {
+            animator.SetBool("Dead",true);
+            isDead = true;
         }
     }
     //Player LevelUp
@@ -111,6 +125,10 @@ public class Player : MonoBehaviour
     public void DecreaseHP()
     {
         HP --;
+        if(HP <= 0)
+        {
+            HP = 0;
+        }
     }
     // Improve the max health adding the multiplier 10 times, set the actual HP
     public void LevelUpHP(float Multiplier)

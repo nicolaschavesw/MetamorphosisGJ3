@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     void Update() {
         speed = player.speed;
-        if(player.isAttacking || player.isEating)
+        if(player.isAttacking || player.isEating || player.isDead)
         {
             moveDirection = Vector3.zero;
             animator.SetBool("IsWalking",false);
@@ -33,15 +33,17 @@ public class PlayerController : MonoBehaviour
             moveDirection = cameraRotation * new Vector3(horizontalInput,0,verticalInput);
             transform.position += moveDirection * speed * Time.deltaTime;
         }
+        if(!player.isDead)
+        {
+            float mouseX = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
+            transform.Rotate(Vector3.up * mouseX);
 
-        float mouseX = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
-        transform.Rotate(Vector3.up * mouseX);
-
-        float mouseY = Input.GetAxis("Mouse Y") * pitchSpeed;
-        pitch -= mouseY;
-        pitch = Mathf.Clamp(pitch, -10f, 40f); 
-        playerCamera.localRotation = Quaternion.Euler(pitch, 0f, 0f);
-
+            float mouseY = Input.GetAxis("Mouse Y") * pitchSpeed;
+            pitch -= mouseY;
+            pitch = Mathf.Clamp(pitch, -10f, 40f); 
+            playerCamera.localRotation = Quaternion.Euler(pitch, 0f, 0f);
+        }
+        
         if (moveDirection != Vector3.zero)
         {
             animator.SetBool("IsWalking",true);
