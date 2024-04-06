@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     public bool isEating = false;
     public bool oneAttack = true;
     public bool isDead = false;
-    //public Slider slider;
     public SkinnedMeshRenderer skinnedMeshRenderer;
     public List<Material> materialList;
     private Material actualMaterial;
@@ -38,9 +37,6 @@ public class Player : MonoBehaviour
         isAttacking = false;
         isEating = false;
         oneAttack = true;
-        //slider.value = HP;
-        //slider.minValue = 0;
-        //slider.maxValue = MaxHP;
     }
     void Update()
     {
