@@ -41,7 +41,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623061716}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -58,7 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 242fe841b4a612747814d0dd782181a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: 0
+  food: 10
+  enemy: {fileID: 3277212823732459239}
 --- !u!1 &1954189817
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,10 +120,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   enemyHP: 15
-  speed: 5
+  speed: 2
   attack: 2
   defense: 2
   triggerCorpse: {fileID: 1623061716}
+  isDead: 0
 --- !u!1001 &2430701774900865974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -277,6 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  enemy: {fileID: 1954189819}
 --- !u!195 &987429448
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -287,7 +290,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

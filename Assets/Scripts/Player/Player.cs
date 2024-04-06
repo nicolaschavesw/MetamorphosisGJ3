@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.PlasticSCM.Editor.WebApi;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +23,8 @@ public class Player : MonoBehaviour
     public SkinnedMeshRenderer skinnedMeshRenderer;
     public List<Material> materialList;
     private Material actualMaterial;
-    public int selectedMaterial = 0;
+    private int selectedMaterial = 0;
+    public float timer;
 
 
     void Start()
@@ -34,10 +36,18 @@ public class Player : MonoBehaviour
         isAttacking = false;
         isEating = false;
         //slider.value = HP;
+        //slider.minValue = 0;
         //slider.maxValue = MaxHP;
     }
     void Update()
     {
+        timer += Time.deltaTime;
+        if (timer >= 2.0f)
+        {
+            DecreaseHP();
+            timer = 0.0f;
+            Debug.Log("Vida: " + HP);
+        }
         //Player Attack when LeftClick is down
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -52,9 +62,10 @@ public class Player : MonoBehaviour
             animator.SetBool("IsEating",true);
             StartCoroutine(Eat());
         }
-        if(Input.GetKeyDown(KeyCode.Z))
+        if(HP > MaxHP)
         {
             LevelUp();
+            Debug.Log("La vida supero la vida maxima \n Spider subio al nivel: " + level);
         }
     }
     //Player LevelUp
@@ -84,11 +95,22 @@ public class Player : MonoBehaviour
         actualMaterial = materialList[selectedMaterial];
         skinnedMeshRenderer.material = actualMaterial;
     }
-    public void UpdateHP(float foodToAdd)
+    public void UpdateHP(float foodToAdd, GameObject food)
     {
-        Debug.Log("Vida actual: "+ HP);
+        DeadEnemy deadEnemy = food.gameObject.GetComponent<DeadEnemy>();
+        deadEnemy.Disapear();
         HP += foodToAdd;
-        Debug.Log("Spider ha comido: " + foodToAdd + " puntos de comida\n La vida de Spider es: "+ HP);
+        Debug.Log("Vida actual: "+ HP);
+        if(HP > MaxHP)
+        {
+            LevelUp();
+            Debug.Log("La vida supero la vida maxima \n Spider subio al nivel: " + level);
+        }
+    }
+
+    public void DecreaseHP()
+    {
+        HP --;
     }
     // Improve the max health adding the multiplier 10 times, set the actual HP
     public void LevelUpHP(float Multiplier)
@@ -168,7 +190,7 @@ public class Player : MonoBehaviour
         {
             DeadEnemy deadEnemy = other.gameObject.GetComponent<DeadEnemy>();
             float foodToAdd = deadEnemy.food;
-            UpdateHP(foodToAdd);
+            UpdateHP(foodToAdd,other.gameObject);
             oneAttack = false;
             Debug.Log("Colisionó");
         }

@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8208468939470250128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8208468939815596513}
@@ -99,12 +99,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  HP: 100
-  MaxHP: 0
-  speed: 10
+  HP: 0
+  MaxHP: 50
+  speed: 4
   attack: 5
   defense: 2
-  size: {x: 1, y: 1, z: 1}
+  size: {x: 0.3, y: 0.3, z: 0.3}
   animator: {fileID: 8208468939808693831}
   isAttacking: 0
   isEating: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 76652fc05693d814a98887b7d5f1271a, type: 2}
   - {fileID: 2100000, guid: 011d47c443fd0404b8ffd5af3df2391c, type: 2}
   - {fileID: 2100000, guid: 3d3307d3a991f4b44bb2a590f9c7a2e7, type: 2}
-  selectedMaterial: 0
+  timer: 0
 --- !u!1 &8208468939546339054
 GameObject:
   m_ObjectHideFlags: 0

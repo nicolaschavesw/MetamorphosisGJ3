@@ -64,6 +64,7 @@ MonoBehaviour:
   attack: 2
   defense: 2
   triggerCorpse: {fileID: 1822996150}
+  isDead: 0
 --- !u!1 &1822996150
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +106,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822996150}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -123,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   food: 0
+  enemy: {fileID: 7704296163333604482}
 --- !u!1001 &7361768402134415827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -277,6 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  enemy: {fileID: 1073716922}
 --- !u!195 &947205228
 NavMeshAgent:
   m_ObjectHideFlags: 0

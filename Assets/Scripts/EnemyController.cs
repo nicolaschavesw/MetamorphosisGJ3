@@ -28,16 +28,16 @@ public class EnemyController : MonoBehaviour
         if(distanceToPlayer < minDistance)
         {
             animator.SetBool("isReacting", true);
-          StartCoroutine(ReactForSeconds(2f));
+            StartCoroutine(ReactForSeconds(2f));
 
-          if(!enemy.isDead)
-          {
-            agent.SetDestination(player.position);
-          }  
-          else
-          {
-            player.position = player.position;
-            animator.SetBool("isDead", true);
+            if(!enemy.isDead)
+            {
+                agent.SetDestination(player.position);
+            }  
+            else
+            {
+                player.position = player.position;
+                animator.SetBool("isDead", true);
           }
         }
 

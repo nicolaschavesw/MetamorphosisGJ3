@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         if (moveDirection != Vector3.zero)
         {
             animator.SetBool("IsWalking",true);
-            animator.SetFloat("Speed",speed * 0.1f);
+            animator.SetFloat("Speed",speed * 0.5f);
             
         }
         else
