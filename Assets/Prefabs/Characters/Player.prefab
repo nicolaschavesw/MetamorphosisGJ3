@@ -101,7 +101,7 @@ MonoBehaviour:
   level: 1
   HP: 0
   MaxHP: 50
-  speed: 4
+  speed: 5
   attack: 5
   defense: 2
   size: {x: 0.3, y: 0.3, z: 0.3}
@@ -109,6 +109,7 @@ MonoBehaviour:
   isAttacking: 0
   isEating: 0
   oneAttack: 1
+  isDead: 0
   skinnedMeshRenderer: {fileID: 8208468939812774023}
   materialList:
   - {fileID: 2100000, guid: 94e5ab6677b795c429cd716c65c1fa14, type: 2}
@@ -122,6 +123,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 011d47c443fd0404b8ffd5af3df2391c, type: 2}
   - {fileID: 2100000, guid: 3d3307d3a991f4b44bb2a590f9c7a2e7, type: 2}
   timer: 0
+  HPBar: {fileID: 0}
 --- !u!1 &8208468939546339054
 GameObject:
   m_ObjectHideFlags: 0
