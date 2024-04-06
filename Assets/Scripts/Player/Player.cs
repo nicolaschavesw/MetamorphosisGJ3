@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
     }
     public void UpdateHP(float foodToAdd, GameObject food)
     {
-        DeadEnemy deadEnemy = food.gameObject.GetComponent<DeadEnemy>();
+        DeadEnemy deadEnemy = food.GetComponent<DeadEnemy>();
         deadEnemy.Disapear();
         HP += foodToAdd;
         Debug.Log("Vida actual: "+ HP);
