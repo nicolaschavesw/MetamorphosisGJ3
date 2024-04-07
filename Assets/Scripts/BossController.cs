@@ -22,6 +22,7 @@ public class BossController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         GameObject playerObject = GameObject.FindGameObjectWithTag(playerTag);
+        player.position = playerObject.transform.position;
     }
 
     void Update()
