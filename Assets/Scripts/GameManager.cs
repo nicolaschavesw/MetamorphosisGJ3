@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     // 
     public Puntaje puntajePasar;
 
-    public GameObject perder;
+    public GameObject perder, ganar;
 
     public Player player;
 // -----------------------------------------------------------------------------------------    
@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
     {
         if (puntaje >= puntajePasar.puntajeRequired){
             Debug.Log("Pasaste de escena");
+            ganar.SetActive(true);
+            player.isWin = true;
+
         }
 
         if (Input.GetKey(KeyCode.Escape)){

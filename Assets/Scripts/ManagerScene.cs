@@ -17,8 +17,19 @@ public class ManagerScene : MonoBehaviour
 
     }
 
-    public void Play(){
+    public void PlayLevel1(){
         // Carga la escena para Jugar
-        SceneManager.LoadScene(1);
-}
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void PlayLevel2(){
+        Debug.Log("Scene 2 Loaded");
+        // Carga la escena para Jugar
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void MenuInicio(){
+        Debug.Log("Inicio");
+        SceneManager.LoadScene(0);
+    }
 }

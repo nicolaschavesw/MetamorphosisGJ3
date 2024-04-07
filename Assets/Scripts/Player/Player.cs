@@ -20,12 +20,15 @@ public class Player : MonoBehaviour
     public bool isEating = false;
     public bool oneAttack = true;
     public bool isDead = false;
+    public bool isWin = false;
     public SkinnedMeshRenderer skinnedMeshRenderer;
     public List<Material> materialList;
     private Material actualMaterial;
     private int selectedMaterial = 0;
     public float timer;
     public Image HPBar;
+
+    
 
 
     void Start()
@@ -37,6 +40,7 @@ public class Player : MonoBehaviour
         isAttacking = false;
         isEating = false;
         oneAttack = true;
+        isWin = false;
 
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -51,6 +55,12 @@ public class Player : MonoBehaviour
         }
 
         HPBar.fillAmount = HP / MaxHP;
+
+        if (isWin){
+            Cursor.lockState = CursorLockMode.None;
+            HP = MaxHP;
+            timer = 0f;
+        }
 
         if(!isDead)
         {

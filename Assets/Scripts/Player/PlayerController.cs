@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     void Update() {
         speed = player.speed;
-        if(player.isAttacking || player.isEating || player.isDead)
+        if(player.isAttacking || player.isEating || player.isDead || player.isWin)
         {
             moveDirection = Vector3.zero;
             animator.SetBool("IsWalking",false);
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
             moveDirection = cameraRotation * new Vector3(horizontalInput,0,verticalInput);
             transform.position += moveDirection * speed * Time.deltaTime;
         }
-        if(!player.isDead)
+        if(!player.isDead || !player.isWin)
         {
             float mouseX = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
             transform.Rotate(Vector3.up * mouseX);
