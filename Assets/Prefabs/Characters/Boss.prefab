@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food: 50
   enemy: {fileID: 5018940459589303165}
+  puntajeEnviar: {fileID: 0}
 --- !u!1 &1568710137092804459
 GameObject:
   m_ObjectHideFlags: 0
@@ -4211,7 +4212,6 @@ GameObject:
   - component: {fileID: 1568710136821467669}
   - component: {fileID: 1568710136821467666}
   - component: {fileID: 1568710136821467671}
-  - component: {fileID: 1568710136821467668}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -4295,20 +4295,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1568710136821467668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5018940459589303165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab38f8c944579845887e394e4ddce97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  enemy: {fileID: 1568710137092804457}
 --- !u!1 &5018943208406364425
 GameObject:
   m_ObjectHideFlags: 0
