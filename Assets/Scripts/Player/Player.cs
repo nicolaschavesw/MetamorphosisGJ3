@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public bool oneAttack = true;
     public bool isDead = false;
     public bool isWin = false;
+    public bool isPaused = false;
     public SkinnedMeshRenderer skinnedMeshRenderer;
     public List<Material> materialList;
     private Material actualMaterial;
@@ -41,6 +42,7 @@ public class Player : MonoBehaviour
         isEating = false;
         oneAttack = true;
         isWin = false;
+        isPaused = false;
 
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -59,6 +61,11 @@ public class Player : MonoBehaviour
         if (isWin){
             Cursor.lockState = CursorLockMode.None;
             HP = MaxHP;
+            timer = 0f;
+        }
+
+        if (isPaused){
+            Cursor.lockState = CursorLockMode.None;
             timer = 0f;
         }
 

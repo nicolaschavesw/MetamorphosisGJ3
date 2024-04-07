@@ -217,7 +217,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -61.2, y: -38.8}
+  m_AnchoredPosition: {x: -61.2, y: -22.2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6054079745960222687
@@ -305,7 +305,7 @@ MonoBehaviour:
       - m_Target: {fileID: 9112221049662656961, guid: e31837bdc2c04044db0f6937458138ab,
           type: 3}
         m_TargetAssemblyTypeName: ManagerScene, Assembly-CSharp
-        m_MethodName: PlayLevel1
+        m_MethodName: PlayCurrentLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -350,7 +350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 148.4, y: 0}
+  m_AnchoredPosition: {x: -5.8, y: 0}
   m_SizeDelta: {x: 159.3688, y: 34.5731}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &8964013911235567102
@@ -490,7 +490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -69, y: -38.8}
+  m_AnchoredPosition: {x: 83.5, y: -18.8}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4049165718485382902

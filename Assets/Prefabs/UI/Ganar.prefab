@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 6018412458635275375}
   - component: {fileID: 4481806555587493205}
   m_Layer: 5
-  m_Name: SiguienteButton
+  m_Name: SalirButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -426,7 +426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5650444309536849816
 RectTransform:
   m_ObjectHideFlags: 0
