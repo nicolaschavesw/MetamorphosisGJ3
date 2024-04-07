@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     // 
     public Puntaje puntajePasar;
 
-    public GameObject perder;
+    public GameObject perder, ganar, pausar;
+    public bool pausedGame = false;
 
     public Player player;
 // -----------------------------------------------------------------------------------------    
@@ -25,16 +26,47 @@ public class GameManager : MonoBehaviour
     {
         if (puntaje >= puntajePasar.puntajeRequired){
             Debug.Log("Pasaste de escena");
+            ganar.SetActive(true);
+            player.isWin = true;
+
+        }
+        // -----------------------------------------------------------------------------------------    
+        // Pause and unpause game
+        if (Input.GetKeyDown(KeyCode.Escape) && pausedGame == false){
+            Debug.Log("Paused");
+            pausedGame = true;
+            pausar.SetActive(true);
+            Time.timeScale = 0f;
+            player.isPaused = true;
+        } 
+        else if (Input.GetKeyDown(KeyCode.Escape) && pausedGame == true){
+            Debug.Log("Unpaused");
+            pausedGame = false;
+            pausar.SetActive(false);
+            Time.timeScale = 1f;
+            player.isPaused = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
-        if (Input.GetKey(KeyCode.Escape)){
-            Debug.Log("Paused");
-        }
+       /* if (pausedGame == true){
+            pausar.SetActive(true);
+        }else if (pausedGame == false){
+            pausar.SetActive(false);
+        } */
 
         if (player.isDead){
             perder.SetActive(true);
-        }
-
+        } 
+        // -----------------------------------------------------------------------------------------    
+    }
+// -----------------------------------------------------------------------------------------
+    public void Reanudar (){
+        Debug.Log("Unpaused");
+        pausedGame = false;
+        pausar.SetActive(false);
+        Time.timeScale = 1f;
+        player.isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 // -----------------------------------------------------------------------------------------
     // Metodo para actualizar la variable del puntaje
@@ -46,10 +78,10 @@ public class GameManager : MonoBehaviour
         return puntaje;
     }    
 // -----------------------------------------------------------------------------------------
-    public void playLevel1(){
+/*     public void playLevel1(){
         // Carga la escena para Jugar
         SceneManager.LoadScene(1);
-    }    
+    }     */
 // -----------------------------------------------------------------------------------------    
 // -----------------------------------------------------------------------------------------    
 // -----------------------------------------------------------------------------------------    

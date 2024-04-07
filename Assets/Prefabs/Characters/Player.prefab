@@ -110,6 +110,7 @@ MonoBehaviour:
   isEating: 0
   oneAttack: 1
   isDead: 0
+  isWin: 0
   skinnedMeshRenderer: {fileID: 8208468939812774023}
   materialList:
   - {fileID: 2100000, guid: 94e5ab6677b795c429cd716c65c1fa14, type: 2}

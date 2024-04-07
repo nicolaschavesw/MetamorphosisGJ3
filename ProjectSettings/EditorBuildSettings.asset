@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Miguel Diaz/Scenes/MenuInicio.unity
     guid: 1baf7857f352f9a46a1955f590185c67
   - enabled: 1
-    path: Assets/Scenes/Testing Level 1.unity
-    guid: 6eee36e8924d8ff4eb6c1351461c0ecf
+    path: Assets/Scenes/SecTesting Level 1.unity
+    guid: ebc50b0d1524f274c8247d459ec03442
   - enabled: 1
-    path: Assets/Scenes/Testing Level 2.unity
-    guid: 532b5088f20bb684aa44cb36d3ef16f6
+    path: Assets/Scenes/SecTesting Level 2.unity
+    guid: b08e647e7838f0a469bf587f9c8efa6e
   - enabled: 1
     path: Assets/Scenes/Testing Level 3.unity
     guid: 49ad77490b8fb814c80f541a9e21fb77

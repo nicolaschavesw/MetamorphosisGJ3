@@ -16,9 +16,32 @@ public class ManagerScene : MonoBehaviour
     {
 
     }
+// -----------------------------------------------------------------------------------------    
 
     public void Play(){
         // Carga la escena para Jugar
         SceneManager.LoadScene(1);
-}
+        Time.timeScale = 1f;
+    }
+// -----------------------------------------------------------------------------------------    
+
+     public void PlayCurrentLevel(){
+        // Carga la escena para Jugar
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+    }
+// -----------------------------------------------------------------------------------------    
+
+    public void PlayLevel2(){
+        Debug.Log("Scene 2 Loaded");
+        // Carga la escena para Jugar
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1f;
+    }
+// -----------------------------------------------------------------------------------------    
+
+    public void MenuInicio(){
+        Debug.Log("Inicio");
+        SceneManager.LoadScene(0);
+    }
 }
