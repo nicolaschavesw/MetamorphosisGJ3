@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class SavePlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Awake() {
+        var SavePlayerScenes = FindObjectsOfType<SavePlayer>();
+        if (SavePlayerScenes.Length > 1)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
     }
 }
