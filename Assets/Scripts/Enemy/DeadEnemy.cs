@@ -7,17 +7,21 @@ public class DeadEnemy : MonoBehaviour
 {
     public float food;
     public GameObject enemy;
-    // Start is called before the first frame update
+
+    private int puntos;
+    public GameManager puntajeEnviar;
+// -----------------------------------------------------------------------------------------    
     void Start()
     {
-        
+        /* puntajeEnviar = FindObjectOfType<GameManager>(); */
     }
+// -----------------------------------------------------------------------------------------    
     public void Disapear()
     {
         enemy.SetActive(false);
+        puntajeEnviar.ActualizarPuntaje(1);
     }
-
-    // Update is called once per frame
+// -----------------------------------------------------------------------------------------    
     void Update()
     {
         

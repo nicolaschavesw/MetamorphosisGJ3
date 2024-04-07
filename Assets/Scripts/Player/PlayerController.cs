@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public Player player;
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        /* Cursor.lockState = CursorLockMode.Locked; */
     }
 
     void Update() {

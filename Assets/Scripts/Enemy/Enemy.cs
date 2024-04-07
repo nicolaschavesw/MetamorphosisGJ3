@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
         {
             enemyHP = 0;
         }
-        Debug.Log("Vida del enemigo: " + enemyHP);
+        /* Debug.Log("Vida del enemigo: " + enemyHP); */
     }
 
     public void IsDead()
@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
         if(enemyHP <=0)
         {
             IsDead();
-            Debug.Log("isDead");
+            /* Debug.Log("isDead"); */
         }
     }
 }

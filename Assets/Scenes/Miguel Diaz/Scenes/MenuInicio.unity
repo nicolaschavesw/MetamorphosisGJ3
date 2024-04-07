@@ -1631,7 +1631,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: RESUMEN
+  m_text: SALIR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -2410,6 +2410,18 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1736190045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9112221049662656961, guid: e31837bdc2c04044db0f6937458138ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 9112221051282454940}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9027b8b676912a24abf8f0985bacc729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1809987174
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,8 +2642,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1244785748}
-        m_TargetAssemblyTypeName: MenuInicio, Assembly-CSharp
+      - m_Target: {fileID: 1736190045}
+        m_TargetAssemblyTypeName: ManagerScene, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -2816,3 +2828,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049679108}
   m_CullTransparentMesh: 1
+--- !u!1001 &9112221051282454940
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9112221049662656960, guid: e31837bdc2c04044db0f6937458138ab,
+        type: 3}
+      propertyPath: m_Name
+      value: ManagerScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112221049662656962, guid: e31837bdc2c04044db0f6937458138ab,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112221049662656962, guid: e31837bdc2c04044db0f6937458138ab,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.8330898
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112221049662656962, guid: e31837bdc2c04044db0f6937458138ab,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 22.006716
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112221049662656962, guid: e31837bdc2c04044db0f6937458138ab,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -77.20096
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112221049662656962, guid: e31837bdc2c04044db0f6937458138ab,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112221049662656962, guid: e31837bdc2c04044db0f6937458138ab,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112221049662656962, guid: e31837bdc2c04044db0f6937458138ab,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112221049662656962, guid: e31837bdc2c04044db0f6937458138ab,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112221049662656962, guid: e31837bdc2c04044db0f6937458138ab,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112221049662656962, guid: e31837bdc2c04044db0f6937458138ab,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112221049662656962, guid: e31837bdc2c04044db0f6937458138ab,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e31837bdc2c04044db0f6937458138ab, type: 3}

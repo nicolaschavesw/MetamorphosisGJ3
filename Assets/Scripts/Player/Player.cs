@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
         isAttacking = false;
         isEating = false;
         oneAttack = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {
@@ -45,7 +47,7 @@ public class Player : MonoBehaviour
         {
             DecreaseHP();
             timer = 0.0f;
-            Debug.Log("Vida: " + HP);
+            /* Debug.Log("Vida: " + HP); */
         }
 
         HPBar.fillAmount = HP / MaxHP;
@@ -76,6 +78,7 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("Dead",true);
             isDead = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
     //Player LevelUp
@@ -110,7 +113,7 @@ public class Player : MonoBehaviour
         DeadEnemy deadEnemy = food.GetComponent<DeadEnemy>();
         deadEnemy.Disapear();
         HP += foodToAdd;
-        Debug.Log("Vida actual: "+ HP);
+        /* Debug.Log("Vida actual: "+ HP); */
         if(HP > MaxHP)
         {
             LevelUp();

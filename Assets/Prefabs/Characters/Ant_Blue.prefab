@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food: 0
   enemy: {fileID: 7704296163333604482}
+  puntajeEnviar: {fileID: 0}
 --- !u!1001 &7361768402134415827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -155,17 +156,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c76e1dd902d7cfe488a45d500f98d871,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -34.014
+      value: 0.110663414
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c76e1dd902d7cfe488a45d500f98d871,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2591257
+      value: 21.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c76e1dd902d7cfe488a45d500f98d871,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -83.715996
+      value: -69.75894
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c76e1dd902d7cfe488a45d500f98d871,
         type: 3}
