@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: f54b5d32c46502f47b792a17f185ee54, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 0536d1b159c296047a43fa01384a7da6, type: 2}
 --- !u!1001 &64312874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -721,7 +721,7 @@ BoxCollider:
   m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 4.74, y: 6.84, z: 0.77}
-  m_Center: {x: 0.1, y: 1.51, z: -0.46}
+  m_Center: {x: 0.1, y: 1.07, z: -0.21}
 --- !u!1 &553891258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5111464016755491014, guid: 1a0f6bb81e1604b4eadc479d3f81dece,
@@ -1875,6 +1875,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -13.64
       objectReference: {fileID: 0}
+    - target: {fileID: 6285808601064873860, guid: 1a0f6bb81e1604b4eadc479d3f81dece,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6329568066165341426, guid: 1a0f6bb81e1604b4eadc479d3f81dece,
         type: 3}
       propertyPath: m_Enabled
@@ -1885,10 +1890,20 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6857981513052345176, guid: 1a0f6bb81e1604b4eadc479d3f81dece,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7048633484320970059, guid: 1a0f6bb81e1604b4eadc479d3f81dece,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385333299731841901, guid: 1a0f6bb81e1604b4eadc479d3f81dece,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7855708368630323206, guid: 1a0f6bb81e1604b4eadc479d3f81dece,
         type: 3}
