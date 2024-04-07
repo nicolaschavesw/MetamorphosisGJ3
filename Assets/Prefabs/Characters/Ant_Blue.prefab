@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  enemyHP: 20
+  enemyHP: 10
   speed: 5
   attack: 2
   defense: 2
@@ -155,17 +155,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c76e1dd902d7cfe488a45d500f98d871,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -61.614
+      value: -34.014
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c76e1dd902d7cfe488a45d500f98d871,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.54
+      value: -0.2591257
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c76e1dd902d7cfe488a45d500f98d871,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -89.815994
+      value: -83.715996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c76e1dd902d7cfe488a45d500f98d871,
         type: 3}
