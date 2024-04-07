@@ -52,11 +52,10 @@ public class BossController : MonoBehaviour
         ChangeMovement();
     }
 
-    void AttackPlayer()
+    public void AttackPlayer()
     {
         Player playerScript = player.GetComponent<Player>();
         playerScript.TakeDamage(1);
-        Debug.Log("Atacando al jugador");
     }
 
     void ChangeMovement()
