@@ -73,6 +73,10 @@ public class GameManager : MonoBehaviour
         player.isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    public void Inicio (){
+        SceneManager.LoadScene(1);
+    }
 // -----------------------------------------------------------------------------------------
     // Metodo para actualizar la variable del puntaje
     public int ActualizarPuntaje(int puntajeActualizado){

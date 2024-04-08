@@ -10,7 +10,7 @@ public class Puntaje : MonoBehaviour
     // variable que actualiza el puntaje en UI
     private TextMeshProUGUI textMesh;
     // Puntaje para pasar
-    public int puntajeRequired = 1;
+    public int puntajeRequired = 12;
 // -----------------------------------------------------------------------------------------    
     void Start()
     {
