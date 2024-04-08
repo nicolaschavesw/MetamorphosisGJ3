@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.PlasticSCM.Editor.WebApi;
+//using UnityEditor.SearchService;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class Player : MonoBehaviour
 {
     public int level = 1;
-    public float HP = 0;
+    public float HP = 5;
     public float MaxHP = 100;
     public float speed = 10;
     public float attack = 5;
@@ -24,18 +27,20 @@ public class Player : MonoBehaviour
     public bool isPaused = false;
     public SkinnedMeshRenderer skinnedMeshRenderer;
     public List<Material> materialList;
-    private Material actualMaterial;
-    private int selectedMaterial = 0;
+    public Material actualMaterial;
+    public int selectedMaterial = 0;
     public float timer;
     public Image HPBar;
-
-    
+    public SavePlayer savePlayer;
 
 
     void Start()
     {
+        savePlayer = GameObject.FindGameObjectWithTag("SavePlayer").GetComponent<SavePlayer>();
         actualMaterial = materialList[selectedMaterial];
         skinnedMeshRenderer.material = actualMaterial;
+        gameObject.transform.localScale = size;
+        SaveStats();
         HP = MaxHP;
         isDead = false;
         isAttacking = false;
@@ -43,8 +48,8 @@ public class Player : MonoBehaviour
         oneAttack = true;
         isWin = false;
         isPaused = false;
-
         Cursor.lockState = CursorLockMode.Locked;
+        
     }
     void Update()
     {
@@ -86,6 +91,7 @@ public class Player : MonoBehaviour
                 StartCoroutine(Eat());
             }
         }
+
         if(HP > MaxHP)
         {
             LevelUp();
@@ -97,6 +103,20 @@ public class Player : MonoBehaviour
             isDead = true;
             Cursor.lockState = CursorLockMode.None;
         }
+    }
+    public void SaveStats()
+    {
+        level = savePlayer.saveLevel;
+        HP = savePlayer.saveHP;
+        MaxHP = savePlayer.saveMaxHP;
+        speed = savePlayer.saveSpeed;
+        attack = savePlayer.saveAttack;
+        defense = savePlayer.saveDefence;
+        size = savePlayer.saveSize;
+        actualMaterial = savePlayer.saveActualMaterial;
+        selectedMaterial = savePlayer.saveSelectedMaterial;
+        actualMaterial = materialList[selectedMaterial];
+        skinnedMeshRenderer.material = actualMaterial;
     }
     //Player LevelUp
     //All stats up, the material changes, generates a random multiplier to add to the stats
@@ -175,7 +195,7 @@ public class Player : MonoBehaviour
     // makes the size of the player bigger by adding one tenth of the multiplier until 3 max size
     public void LevelUpSize(float Multiplier)
     {
-        float sizeMultiplier = Multiplier / 10;
+        float sizeMultiplier = Multiplier / 50;
         size.x += sizeMultiplier;
         size.y += sizeMultiplier;
         size.z += sizeMultiplier;
@@ -208,6 +228,16 @@ public class Player : MonoBehaviour
             HP = 0;
         }
         Debug.Log("Vida del player: " + HP);
+    }
+
+    public void RestartBools()
+    {
+        isDead = false;
+        isAttacking = false;
+        isEating = false;
+        oneAttack = true;
+        isWin = false;
+        isPaused = false;
     }
     ////////////////////////////// Evaluates if can do a attack with trigger detection and verify if the object of the trigger collision has a enemy script
     private void OnTriggerEnter(Collider other) {

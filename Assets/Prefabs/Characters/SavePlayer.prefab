@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9112221049662656960
+--- !u!1 &4307859173914870394
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9112221049662656962}
-  - component: {fileID: 9112221049662656961}
+  - component: {fileID: 4307859173914870372}
+  - component: {fileID: 4307859173914870395}
   m_Layer: 0
-  m_Name: ManagerScene
-  m_TagString: Untagged
+  m_Name: SavePlayer
+  m_TagString: SavePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9112221049662656962
+--- !u!4 &4307859173914870372
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9112221049662656960}
+  m_GameObject: {fileID: 4307859173914870394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8330898, y: 22.006716, z: -77.20096}
+  m_LocalPosition: {x: -4.507673, y: 2.3036048, z: -114.02947}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9112221049662656961
+--- !u!114 &4307859173914870395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9112221049662656960}
+  m_GameObject: {fileID: 4307859173914870394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9027b8b676912a24abf8f0985bacc729, type: 3}
+  m_Script: {fileID: 11500000, guid: 04909fb1a7d50554d8e93869fe520243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: {fileID: 0}
   player: {fileID: 0}
-  playerCs: {fileID: 0}
+  saveLevel: 0
+  saveSelectedMaterial: 0
+  saveHP: 0
+  saveMaxHP: 0
+  saveSpeed: 0
+  saveAttack: 0
+  saveDefence: 0
+  saveSize: {x: 0, y: 0, z: 0}
+  saveActualMaterial: {fileID: 0}

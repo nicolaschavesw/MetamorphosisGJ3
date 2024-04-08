@@ -15,10 +15,15 @@ public class GameManager : MonoBehaviour
     public bool pausedGame = false;
 
     public Player player;
+    public PlayerController playerController;
+    public GameObject PlayerSpider;
+
 // -----------------------------------------------------------------------------------------    
     void Start()
     {
-
+        PlayerSpider = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
 // -----------------------------------------------------------------------------------------    
@@ -28,7 +33,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Pasaste de escena");
             ganar.SetActive(true);
             player.isWin = true;
-
+            puntaje = 0;
         }
         // -----------------------------------------------------------------------------------------    
         // Pause and unpause game

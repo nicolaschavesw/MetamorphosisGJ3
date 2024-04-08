@@ -22,6 +22,7 @@ public class EnemyCrabController : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         animacion = GetComponent<Animation>();
 

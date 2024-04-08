@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public Player player;
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         /* Cursor.lockState = CursorLockMode.Locked; */
     }
 

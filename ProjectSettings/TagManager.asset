@@ -17,6 +17,7 @@ TagManager:
   - Enemy
   - DeadEnemy
   - StartPoint
+  - SavePlayer
   layers:
   - Default
   - TransparentFX
