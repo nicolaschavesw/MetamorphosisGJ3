@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.11604003, g: 0.17776203, b: 0.18050557, a: 1}
+  m_IndirectSpecularColor: {r: 0.1160176, g: 0.17791659, b: 0.18041739, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puntajeUI: {fileID: 1733392091}
-  puntajeRequired: 1
+  puntajeRequired: 15
 --- !u!114 &383448039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1461,7 +1461,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
